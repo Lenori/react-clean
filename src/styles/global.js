@@ -1,8 +1,9 @@
 import {createGlobalStyle} from 'styled-components';
+
 import 'react-toastify/dist/ReactToastify.css';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 export default createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
     * {
         margin: 0;
@@ -12,7 +13,13 @@ export default createGlobalStyle`
     }
 
     *:focus {
-        outiline: 0;
+        outline: 0;
+    }
+
+    :root {
+        --primary: #000000;
+        --secondary: #58595b;
+        --tertiary: #ffffff;
     }
 
     html, body, #root {
@@ -21,10 +28,14 @@ export default createGlobalStyle`
 
     body {
         -webkit-font-smoothing: antialiased;
+
+        .react-datepicker-wrapper {
+            width: 100%;
+        }
     }
 
     body, input, button {
-        font: 14px 'Roboto', sans-serif;
+        font: 14px 'Lato', sans-serif;
     }
 
     a {

@@ -4,7 +4,6 @@ import {Route, Redirect} from 'react-router-dom';
 
 import {toast} from 'react-toastify';
 
-
 export default function RouteWrapper({
     component: Component,
     isPrivate,
@@ -13,13 +12,8 @@ export default function RouteWrapper({
     const signed = false;
 
     if (!signed && isPrivate) {
-        toast.error('Resource available only for logged users.');
+        toast.error('É necessário estar logado.');
         return <Redirect to='/' />
-    }
-
-    if (signed && !isPrivate) {
-        toast.error('Login successfull.');
-        return <Redirect to ='/dashboard' />
     }
 
     return <Route {...rest} component={Component} />
